@@ -35,6 +35,9 @@ app.use(function (req, res, next) {
   next();
 });
 
+//serve static assests
+app.use(express.static('public'));
+
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
