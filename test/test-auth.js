@@ -177,7 +177,7 @@ describe('Auth endpoints', function () {
         {
           algorithm: 'HS256',
           subject: username,
-          expiresIn: Math.floor(Date.now() / 1000) - 10 // Expired ten seconds ago
+          expiresIn: '1ms' // Expired 1 milisecond ago
         }
       );
 
