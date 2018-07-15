@@ -24,6 +24,9 @@ const app = express();
 // Logging
 app.use(morgan('common'));
 
+//serve static assests
+app.use(express.static('public'));
+
 // CORS
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -34,9 +37,6 @@ app.use(function (req, res, next) {
   }
   next();
 });
-
-//serve static assests
-app.use(express.static('public'));
 
 passport.use(localStrategy);
 passport.use(jwtStrategy);
